@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/" type="image" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/styles/tailwind.min.css"
+    />
+    <title>About Project</title>
+  </head>
+  <body
+    class="flex tracking-wider text-center justify-center overflow-x-hidden items-center h-screen"
+    style="background-color: black; color: #f2ebe9"
+  >
+    <video
+      src="../static/"
+      class="absolute bottom-0 md:-bottom-5 xl:bottom-0 w-64 md:w-150 xl:-right-5"
+      autoplay
+      muted
+      loop
+    ></video>
+    <div
+      class="rounded-2xl sm:w-2/3 mx-20 hover:shadow-2xl transform duration-300"
+      style="background-color: transparent"
+    >
+      <div class="m-10 lg:mx-20">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl mt-10 font-bold">
+          Secure File <span class="text-blue-600">Storage</span>System
+        </h1>
+        <h2 class="lg:text-lg">
+          File Storage Using <em>Hybrid Cryptography </em>
+        </h2>
+        <br /><br />
+        <!-- <h2 class="mt-12 text-center font-semibold text-3xl">'Success'!</h2> -->
+        <div
+          class="h-64 overflow-y-scroll border border-white border-opacity-25 text-left px-3 sm:px-4 md:px-10 xl:px-20 mb-5 w-4/5 mx-auto"
+        >
+          <p class="mt-12 mb-5 mx-auto">
+            <strong>Objective:</strong> Using hybrid cryptography, a platform that users can rely on is created for cloud file storage.
+            <br /><br />
+            <strong>Methodology:</strong>
+          </p>
+          <ol class="mb-5 list-decimal">
+            <li>Load the file on the server.</li>
+            <li>
+              Dividing the uploaded file into N parts depending on the fixed
+              block size.
+            </li>
+            <li>
+              Encrypting all the sub-files using any one of the selected
+              algorithms <br>(Algorithm is changed with every part in round robin
+              fashion).
+            </li>
+            <li>
+              The public key for the cryptography algorithm is given to the user and must be securely transferred to the recipient. The keys for the employed cryptography algorithms are kept in a file. The resulting file is then secured using a different cryptographic algorithm.
+ <br>(Currently, we are using symmetric encryption.)
+            </li>
+          </ol>
+          <p>To restore:</p>
+          <br />
+          <ol class="mb-10 list-decimal">
+            <li>
+              Load the key (.pem file) on the server. Ask it from your sender.
+            </li>
+            <li>Decrypt the keys of the algorithms.</li>
+            <li>
+              Using the same algorithms that were used to encrypt them, decrypt each of the N subfiles.
+            </li>
+            <li>
+              The user will be able to download the original file, which is created by combining all N subfiles.
+
+            </li>
+          </ol>
+        </div>
+        <table class="w-full">
+          <tr class="flex justify-center">
+            <td>
+              <a href="/home"
+                ><button
+                  class="py-2 px-4 border transform duration-200 text-black hover:text-white hover:bg-transparent bg-gray-100 hover:-translate-y-1"
+                >
+                  Back to Home
+                </button></a
+              >
+            </td>
+          </tr>
+        </table>
+        <br />
+        <div class="flex-col mx-auto mt-5 text-center">
+          <h5>Major Project 2023 G-171</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
